@@ -5,13 +5,32 @@ using namespace std;
 
 int main()
 {
-	int masterA[][7] = { {-1, 0, -1, -1, -1, -1, -1},
-						 {-1, -1, -2, -2, -2, -2, -1},
-						 {-1, -1, -2, -1, -1, -2, -1},
-						 {-1, -2, -2, -1, 50, -2, -1},
-						 {-1, -1, -1, -1, -2, -2, -1},
-						 {-1, -1, -1, -1, -1, -1, -1} };
+	double masterA[][7] = { {3.23, 3.23, 3.23, 3.23, 3.23, 3.23, 3.23},
+						 {3.23, 3.23, -2, -2, -2, -2, 3.23},
+						 {3.23, 3.23, -2, 3.23, 3.23, -2, 3.23},
+						 {3.23, -2, -2, 3.23, 3.23, -2, 3.23},
+						 {3.23, 3.23, 3.23, 3.23, -2, -2, 3.23},
+						 {3.23, 3.23, 3.23, 3.23, 3.23, 3.23, 3.23} };
 
-    AI z;
+	AI z(masterA);
+
+	z.updateMasterSense();
+	cout << "Sensor update" << endl;
+	z.updateProbabilitySensor();
+	cout<< endl << "motion Update N" << endl;
+	z.movementUpdate(2);
+	cout << endl<< "Sensor update" << endl;
+	z.updateMasterSense();
+	z.updateProbabilitySensor();
+	cout << endl << "motion Update E" << endl;
+	z.movementUpdate(3);
+	cout << endl << "Sensor update" << endl;
+	z.updateMasterSense();
+	z.updateProbabilitySensor();
+	cout << endl << "motion Update E" << endl;
+	z.movementUpdate(3);
+	cout << endl << "Sensor update" << endl;
+	z.updateMasterSense();
+	z.updateProbabilitySensor();
 }
 
